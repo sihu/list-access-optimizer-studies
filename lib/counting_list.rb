@@ -1,4 +1,4 @@
-Item = Struct.new(:value, :next)
+Item = Struct.new(:value, :next, :count)
 
 class CountingList
   attr_accessor :head
@@ -6,7 +6,7 @@ class CountingList
   def initialize(values)
     @head = nil
     values.reverse_each do |value|
-      current = Item.new(value, @head)
+      current = Item.new(value, @head, 0)
       @head = current
     end
     @hop_count = 0

@@ -39,6 +39,8 @@ RSpec.describe Strategies::MoveToFront do
           big_list.retrieve(values.sample)
         end
       }.to change { big_list.hop_count }.by_at_most(100_000)
+
+      puts big_list.hop_count
     end
   end
 end
